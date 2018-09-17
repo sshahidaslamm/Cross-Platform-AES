@@ -128,7 +128,7 @@
 }
 
 - (NSString *) decryptCipherText:(NSString *)ciperText key:(NSString *)key iv:(NSString *)iv {
-    return [[NSString alloc] initWithData:[[CryptLib alloc] decrypt:[[NSData alloc] initWithBase64EncodedString:ciperText options:NSDataBase64DecodingIgnoreUnknownCharacters] key:[[CryptLib alloc] sha256:key length:32] iv:[[CryptLib alloc] generateRandomIV16]] encoding:NSUTF8StringEncoding];
+    return [[NSString alloc] initWithData:[[CryptLib alloc] decrypt:[[NSData alloc] initWithBase64EncodedString:ciperText options:NSDataBase64DecodingIgnoreUnknownCharacters] key:[[CryptLib alloc] sha256:key length:32] iv:iv] encoding:NSUTF8StringEncoding];
 }
 
 - (NSString *) encryptPlainTextRandomIVWithPlainText:(NSString *)plainText key:(NSString *)key {
